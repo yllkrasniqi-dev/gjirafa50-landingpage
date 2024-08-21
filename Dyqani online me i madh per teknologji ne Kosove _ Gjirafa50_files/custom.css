@@ -1,0 +1,261 @@
+@media all and (min-width: 1001px) {
+  .theme-custom {
+    margin: -30px 0 0;
+  }
+}
+.small-banner-wrapper {
+  min-height: 160px;
+  max-height: 240px;
+  margin-top: -20px;
+}
+@media all and (min-width: 1300px) {
+  .small-banner-wrapper {
+    width: 1280px;
+    margin: -20px auto 0;
+  }
+}
+.swiper {
+  z-index: 0;
+}
+.main-slider-wrapper {
+  min-height: 340px;
+  max-height: 450px;
+}
+.main-slider-wrapper .swiper-button-next,
+.main-slider-wrapper .swiper-button-prev {
+  color: #fff !important;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(1px);
+  mix-blend-mode: difference;
+}
+.main-slider-wrapper .swiper-button-prev::after,
+.main-slider-wrapper .swiper-button-next::after {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+.swiper-container {
+  width: 100%;
+  height: 200px;
+}
+.swiper-container {
+  margin-top: 30px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  width: 80px;
+  height: 8px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0 2px #fff;
+  box-shadow: 0 0 0 2px #fff;
+  padding: 0 6px !important;
+}
+.swiper-pagination-bullet::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@media all and (max-width: 800px) {
+  .swiper-pagination-bullet {
+    width: 20px;
+  }
+  .main-slider-wrapper .swiper-button-prev::after,
+  .main-slider-wrapper .swiper-button-next::after {
+    font-weight: 500 !important;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: rgba(0, 0, 0, 0.1);
+}
+.swiper-pagination-bullet-active::before {
+  border-radius: 4px;
+  background: #ffdcd0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 173, 145, 1) 0%,
+    rgba(228, 111, 70, 1) 50%,
+    rgba(225, 87, 38, 1) 100%
+  );
+  animation: slide-progress 5s cubic-bezier(0.3, 0, 0.3, 1) forwards;
+}
+.swiper-paused {
+  animation-play-state: paused;
+}
+@keyframes slide-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.swiper-pagination {
+  bottom: 30px !important;
+  z-index: 0;
+}
+.category-box-slider.swiper {
+  background: 0 0;
+  border: none;
+}
+.products-slider .swiper-slide {
+  justify-content: start !important;
+}
+.raiffeisen-products-section,
+.raiffeisen-products-section .see-more,
+.raiffeisen-products-section button {
+  background: #ffed00;
+  color: #000;
+}
+.raiffeisen-products-section button {
+  border-radius: 6px;
+  font-weight: 700;
+}
+.recommended-products-slider-thumb .swiper-slide-active,
+.recommended-products-slider-thumb .swiper-slide-thumb-active,
+.raiffeisen-products-slider-thumb .swiper-slide-active,
+.raiffeisen-products-slider-thumb .swiper-slide-thumb-active {
+  border: none !important;
+  border-bottom: 1px solid #eee !important;
+}
+.recommended-products-slider-thumb .swiper-slide-thumb-active::before,
+.raiffeisen-products-slider-thumb .swiper-slide-thumb-active::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.recommended-products-slider-thumb .swiper-slide-thumb-active::before {
+  background: #e15726 !important;
+}
+.raiffeisen-products-slider-thumb .swiper-slide-thumb-active::before {
+  background: #1a1a1a !important;
+}
+.recommended-products-slider-thumb .swiper-slide,
+.raiffeisen-products-slider-thumb .swiper-slide {
+  cursor: pointer;
+  margin-bottom: 0 !important;
+}
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 100% !important;
+}
+.swiper-slide {
+  text-align: start !important;
+}
+.swiper-slide .thumb {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+}
+.swiper-slide .thumb img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.swiper-button-disabled {
+  opacity: 50% !important;
+}
+.progress-bar {
+  width: 0%;
+  transition: width 0.1s linear;
+}
+.recommended-products-section .swiper-scrollbar,
+.raiffeisen-products-section .swiper-scrollbar {
+  background: #fff !important;
+}
+.recommended-products-section .swiper-scrollbar-drag,
+.raiffeisen-products-section .swiper-scrollbar-drag {
+  background: #e2e2e2 !important;
+}
+.categories .swiper-slide {
+  width: calc(100% / 1.2) !important;
+  margin-right: 10px;
+}
+.product-banner .swiper-slide {
+  width: calc(100% / 1.5) !important;
+}
+.raiffeisen-products-slider-thumb .swiper-slide,
+.recommended-products-slider-thumb .swiper-slide {
+  height: 86.16px;
+}
+.raiffeisen-products-slider-thumb,
+.recommended-products-slider-thumb {
+  height: 514px;
+}
+.raiffeisen-products-slider .swiper-slide,
+.recommended-products-slider .swiper-slide {
+  min-height: 498px;
+  height: fit-content;
+  width: calc(100% / 1.2) !important;
+  overflow: hidden;
+}
+.raiffeisen-products-slider .swiper-slide {
+  margin-right: 12px !important;
+}
+.recommended-products-slider .swiper-slide {
+  margin-right: 10px !important;
+}
+@media all and (min-width: 420px) {
+  .categories .swiper-slide {
+    width: calc(100% / 1.5) !important;
+  }
+}
+@media all and (min-width: 640px) {
+  .product-banner .swiper-slide,
+  .categories .swiper-slide {
+    width: calc(100% / 2.5) !important;
+  }
+  .categories .swiper-slide {
+    width: calc(100% / 2.5) !important;
+  }
+}
+@media all and (min-width: 768px) {
+  .categories .swiper-slide {
+    width: calc(100% / 3) !important;
+  }
+  .product-banner .swiper-slide,
+  .categories .swiper-slide {
+    width: calc(100% / 3.5) !important;
+  }
+  .raiffeisen-products-slider .swiper-slide,
+  .recommended-products-slider .swiper-slide {
+    height: 514px;
+    width: calc(100% / 2.2) !important;
+  }
+}
+@media all and (min-width: 1024px) {
+  .product-banner .swiper-slide {
+    width: calc(100% / 4) !important;
+  }
+  .categories .swiper-slide {
+    width: 24.5% !important;
+  }
+  .raiffeisen-products-slider .swiper-slide,
+  .recommended-products-slider .swiper-slide {
+    height: 514px;
+    width: 100% !important;
+    margin-right: 16px !important;
+  }
+}
+@media all and (min-width: 1440px) {
+  .product-banner .swiper-slide {
+    width: 20% !important;
+  }
+}

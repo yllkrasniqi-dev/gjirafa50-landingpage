@@ -1,0 +1,14 @@
+function extractProductData(productElement,currency){var productName=productElement.find('.product-name').attr('name');var productQuantity=parseInt(productElement.find('.product-quantity').attr('quantity'));var productPriceString=productElement.find('.product-unit-price').attr('price');var productPrice=parseFloat(productPriceString.replace(/[^\d.,]/g,'').trim());if(!currency){currency=productPriceString.replace(/[\d.,\s]/g,'').trim()==='€'?'EUR':productPriceString.replace(/[\d.,\s]/g,'').trim();}
+return{name:productName,price:productPrice,quantity:productQuantity,currency:currency};}
+function sendGoogleAnalyticsAddToCartEvent(id,name,price,type){var items=[{item_id:id}];if(name!==null){items[0].item_name=name;}
+if(price!==null){items[0].price=price;}
+if(type==='cart'){gtag('event','add_to_cart',{items:items});}else if(type==='wishlist'){gtag('event','add_to_wishlist',{items:items});}}
+function sendViewCartEvent(items){var currency='';var itemArray=items.map(item=>{var priceString=item.UnitPrice.replace(/[^0-9.,]/g,'').trim();var price=parseFloat(priceString.replace(',','.'));if(!currency){currency=item.UnitPrice.replace(/[\d.,\s]/g,'').trim()==='€'?'EUR':item.UnitPrice.replace(/[\d.,\s]/g,'').trim();}
+return{item_name:item.ProductName,item_id:item.Id,price:price,quantity:item.Quantity,discount:item.Discount,};});gtag('event','view_cart',{currency:currency,items:itemArray});}
+function sendProductViewEvent(name,id,price){gtag('event','product_view',{item_name:name,item_id:id,item_price:price});}
+function getPathLocation(){if("@path".startsWith("/search")){return 'search';}else{return 'category';}}
+function sendNoResultEvent(searchQuery){if(searchQuery){gtag('event','no_result_search',{search_query:searchQuery});}}
+function sendClickChatBoxEvent(){gtag('event','click_chatbox');}
+function sendAddLocalStockFilterEvent(isChecked){var action=isChecked?'added':'removed';if(action==='added'){gtag('event','add_in_local_stock_filter');}}
+function sendAddInStockFilterEvent(isChecked){var action=isChecked?'added':'removed';if(action==='added'){gtag('event','add_in_stock_filter');}}
+function appendUtmToHomepageProductUrl(element){var itemType=$(element).attr('type');var utmSource=itemType+'-product';var utmMedium='homepage';var utmCampaign='homepage-featured-products';var utmString='utm_source='+utmSource+'&utm_medium='+utmMedium+'&utm_campaign='+utmCampaign;var productHref=$(element).find('a').attr('href');var updatedProductHref=productHref+(productHref.includes('?')?'&':'?')+utmString;$(element).find('a').attr('href',updatedProductHref);}
